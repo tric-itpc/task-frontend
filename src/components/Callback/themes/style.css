@@ -1,0 +1,68 @@
+.container-callback {
+    display: flex;
+    justify-content: center;
+}
+.container-callback {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-form__input {
+    background: #fff;
+    box-shadow: 1px 3px 3px 3px #d4d4d4;
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+.container-form__input input[type='text'], .container-form__input__catMessega select {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin: 8px 0px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    padding: 7px 0px;
+}
+.container-form__input__textMessage textarea {
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 7px 5px;
+}
+span.countSymbol {
+    font-size: 14px;
+    color: #919191;
+}
+.container-form__input__btn {
+    margin: 20px 0px 5px 0px;
+    display: flex;
+    justify-content: center;
+}
+span.leftSymbol {
+    max-width: 250px;
+    display: block;
+    color: #a71111;
+    margin: 7px;
+    font-size: 13px;
+}
+.container-form__input__btn input[type="submit"] {
+    background: #eee;
+    border: 0px;
+    padding: 10px 40px;
+    font-size: 15px;
+    border-radius: 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.container-form__input__btn input[type="submit"]:hover {
+    background: #143055;
+    color: #fff;
+}
+.container-form__input h1 {
+    text-align: center;
+    margin: 0px;
+}
+.container-form__result-message {
+    text-align: center;
+    font-size: 20px;
+}
