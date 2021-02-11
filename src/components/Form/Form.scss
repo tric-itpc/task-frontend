@@ -1,0 +1,175 @@
+@import '../../variables';
+
+.form{ 
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    margin: 20px 0px;
+    &__title{
+        color: rgb(134, 129, 129);
+    }
+    &__block{
+        background-color: $white;
+        border-radius: 30px;
+        padding: 20px;
+        width: 500px;
+        position: relative;
+    }
+    &__input{
+        padding: 15px;
+        border-radius: 30px;
+        outline: none;
+        border: none;
+        background-color: $form;
+        display: block;
+        margin: auto;
+        color: grey;
+        width: 100%;
+        margin-bottom: 10px;
+        &::placeholder{
+            color: grey
+        }
+    }  
+    &__select{
+        color: grey;
+        background-color: $form;
+        outline: none;
+        border: none;
+        border-radius: 30px;
+        padding: 15px;
+    }
+    &__option{
+        outline: none;
+        border: none;
+        background-color: $main_color;
+        color: $white;
+        &-title{
+            background-color: $form;
+            color: grey;
+            font-size: 17px;
+        }
+    }
+    &__textarea {
+        display: block;
+        margin: 10px 0 10px;
+        outline: none;
+        height: 150px;
+        width: 100%;
+        background-color: $white;
+        border-radius: 15px;
+        border: 1px solid $form;
+        padding: 15px;
+        color: grey;
+        resize: vertical;
+    }
+    &__btn {
+        width: 100%;
+        background-color: $main_color;
+        border-radius: 15px;
+        color: $white;
+        outline: none;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        &:hover{
+            background-color: lighten($color: $main_color, $amount: 3);
+        }
+    }
+    &__error{
+        color: red;
+        padding: 5px;
+        font-size: 12px;
+    }
+}
+.form__file{
+    &-label{
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background-color: $main_color;
+        margin-bottom: 5px;
+        &:hover {
+            background-color: lighten($color: $main_color, $amount: 3);
+        }
+    }
+    &-add{
+        transform: translate(0, -10%);
+        color: $white;
+        font-size: 30px;
+    }
+    &-input {
+        height: 0;
+        width: 0;
+        opacity: 0;
+    }
+    &-text {
+        font-size: 12px;
+        color:rgb(134, 129, 129);
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+.form-person{
+    display: block;
+}
+
+// decoration
+.form{
+    &__decoration {
+        background-color: $white;
+        position: absolute;
+        width: 40px;
+        border-radius: 20px;
+
+        &_first {
+            height: 20px;
+            top: 40px;
+            right: -25px;
+        }
+
+        &_second {
+            height: 20px;
+            top: 80px;
+            right: -25px;
+        }
+
+        &_third {
+            height: 20px;
+            top: 60px;
+            right: -25px;
+            background-color: $main_color;
+        }
+
+        &_fourth {
+            height: 20px;
+            bottom: 40px;
+            left: -25px;
+        }
+
+        &_fifth {
+            height: 20px;
+            bottom: 80px;
+            left: -25px;
+        }
+
+        &_sixth {
+            height: 20px;
+            bottom: 60px;
+            left: -25px;
+            background-color: $main_color;
+        }
+
+        &_circle {
+            height: 20px;
+            width: 20px;
+            bottom: 80px;
+            left: -55px;
+            border-radius: 50%;
+        }
+    }
+}

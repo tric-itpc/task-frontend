@@ -1,0 +1,26 @@
+//media
+@media (max-width: 568px) {
+    .form {
+        width: 100%;
+        margin: 0;
+
+        &__title {
+            margin-bottom: 50px;
+        }
+
+        &__block {
+            border-radius: 0px;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+        }
+
+        &__decoration {
+            display: none;
+        }
+
+        &__select {
+            width: 100%;
+        }
+    }
+}
