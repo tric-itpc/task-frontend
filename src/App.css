@@ -1,0 +1,43 @@
+.container {
+    color: white;
+}
+
+input[type="text"], input[type="email"] {
+    height: 50px;
+    font-size: 18px;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+.field {
+    background-color: #182134;
+    box-shadow: 0 -5px 0 #3adbfd;
+}
+
+select{
+    height: 50px;
+    font-size: 18px;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+.dws-submit {
+    padding: 13px 30px;
+    margin: 5px 0 20px 0;
+    font-size: 15px;
+    color: #fff;
+    background-color: #2ca8c6;
+    border-bottom: 4px solid #6ee9fd;
+    cursor: pointer;
+}
+
+.dws-submit:hover {
+    transition: all 0.5s;
+    background: #fff;
+    color: #2c536c;
+}
+
+.dws-description {
+    color: #fff;
+    font-size: 18px;
+}
