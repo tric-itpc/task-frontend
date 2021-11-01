@@ -1,0 +1,119 @@
+html {
+  background-color: #F6F8FF;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.header {
+  background-color: white;
+  height: 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__heading {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 400;
+  font-size: 34px;
+  margin-left: 24px;
+}
+
+.modal_position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 24px;
+  padding: 20px 40px 20px 40px;
+  margin-top: 10vh;
+  width: 400px;
+  min-height: 520px;
+}
+
+.modal__label {
+  font-weight: 400;
+  font-size: 16px;
+  color: #101D94;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+:root {
+  --firstNameBorderStyle: 1px solid #EEEDED;
+  --secondNameBorderStyle: 1px solid #EEEDED;
+  --emailBorderStyle: 1px solid #EEEDED;
+  --categoryBorderStyle: 1px solid #EEEDED;
+  --messageBorderStyle: 1px solid #EEEDED;
+  --indexBorderStyle: 1px solid #EEEDED;
+}
+
+.modal__input {
+  border-radius: 5px;
+  padding: 11px 15px 11px 15px;
+  width: 100%;
+  color: #6B6B6B;
+  font-size: 16px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.modal__text_area {
+  max-width: 100%;
+}
+
+.modal__firstName {
+  border: var(--firstNameBorderStyle);
+}
+
+.modal__secondName {
+  border: var(--secondNameBorderStyle);
+}
+
+.modal__email {
+  border: var(--emailBorderStyle);
+}
+
+.modal__category {
+  border: var(--categoryBorderStyle);
+}
+
+.modal__message {
+  border: var(--messageBorderStyle);
+}
+
+.modal__continue_button {
+  cursor: pointer;
+  background-color: #47B752;
+  width: 180px;
+  height: 45px;
+  border-radius: 5px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 20px;
+}
