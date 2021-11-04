@@ -1,0 +1,8 @@
+.header {
+    text-align: center;
+    padding: 30px;
+    border-bottom: 1px solid tomato;
+}
+.header h1 {
+    margin: 0;
+}

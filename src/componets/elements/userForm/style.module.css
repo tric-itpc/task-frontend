@@ -1,0 +1,19 @@
+.userForm {
+    width: min(616px, 100%);
+    margin: 0 auto;
+    padding: 30px 15px;
+}
+.userForm__button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #01a7fd;
+    border-radius: 100px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+}
+.userForm__buttonError {
+    background-color: tomato;
+}
