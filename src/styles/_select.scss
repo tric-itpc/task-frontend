@@ -1,0 +1,49 @@
+.select {
+  &__wrap {
+    width: 100%;
+  }
+
+  &__select {
+    background: #ffffff;
+    border: 1px solid #dbe2ea;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(44, 39, 56, 0.04);
+    border-radius: 6px;
+    padding: 16px 12px;
+    outline: none;
+    width: 100%;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    text-align: left;
+
+    margin-top: 7px;
+
+
+    &:focus {
+      border: 2px solid #0880ae;
+      padding: 15px 11px;
+    }
+
+    opacity: 1;
+    &.empty {
+      color: $DEFAULT_PLACEHOLDER_COLOR;
+
+      & > option {
+        color: $DEFAULT_COLOR;
+        background-color: white;
+      }
+    }
+  }
+
+  &__label {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #756f86;
+  }
+}

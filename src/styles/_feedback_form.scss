@@ -1,0 +1,39 @@
+.feedback-form {
+  &__wrap {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__title {
+    color: $DEFAULT_COLOR;
+  }
+
+  &__elements-wrap {
+    margin-top: 10px;
+    column-gap: 20px;
+    row-gap: 10px;
+    display: flex;
+
+    @media screen and (max-width: $ADAPTIVE_BREAKPOINT_1) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__submit-button-wrap {
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  &__element {
+    width: 100%;
+  }
+
+}
