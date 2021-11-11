@@ -1,4 +1,4 @@
-.root {
+.button {
   margin: 5px 0;
   padding: 0.6em 1em;
   font-size: 1.2rem;
@@ -13,12 +13,17 @@
   transition: background-color 0.2s ease-in-out;
 }
 
-.root:hover {
+button:disabled {
+  background-color: hsla(190, 10%, 12%, 0.5);
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
   background-color: hsla(76, 58%, 55%, 0.8);
 }
 
-.root:active,
-.root:focus {
-  background-color: hsl(76, 58%,50%);
+.button:active:not(:disabled),
+.button:focus:not(:disabled) {
+  background-color: hsl(76, 58%, 50%);
   outline: 1px solid hsl(76, 58%, 35%);
 }

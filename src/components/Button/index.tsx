@@ -7,7 +7,7 @@ interface IProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTML
 
 const Button: React.FC<IProps> = ({ children, ...props }) => {
   return (
-    <button className={styles.root} {...props}>
+    <button className={styles.button} {...props}>
       {children}
     </button>
   );
