@@ -4,6 +4,7 @@ import { Formik, Form } from "formik";
 import FormField from "../components/FormField";
 import { EMessageCategory } from "../types";
 import styles from "./styles.module.css";
+import Button from "../components/Button";
 
 interface IFormValues {
   firstName: string;
@@ -44,7 +45,7 @@ const MyForm: React.FC = () => {
           <FormField label='Категория' name='category' component='select' options={categories} />
           <FormField label='Сообщение' name='message' component='textarea' />
 
-          <button type='submit'>Отправить</button>
+          <Button type='submit'>Отправить</Button>
         </Form>
       </Formik>
     </div>
