@@ -58,7 +58,8 @@ const initialValues: IFormValues = {
 
 const MyForm: React.FC = () => {
   const onSubmit = (values: IFormValues) => {
-    console.log(values);
+    console.dir(values);
+    alert(JSON.stringify(values, null, 2));
   };
 
   return (
