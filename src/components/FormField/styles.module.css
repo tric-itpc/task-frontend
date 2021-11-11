@@ -1,0 +1,16 @@
+.label {
+  margin-right: 10px;
+}
+
+.input {
+  font-size: 1.1rem;
+  border: 1px solid rgb(27, 32, 33);
+}
+
+.input.danger {
+  background-color: rosybrown;
+}
+
+.helperText {
+  color: rosybrown;
+}
