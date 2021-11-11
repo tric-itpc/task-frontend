@@ -17,7 +17,7 @@ const FormField: React.FC<IProps> = ({ label, name, options, ...other }) => {
       <label className={styles.label} htmlFor={name}>
         {label}:
       </label>
-      <Field id={name} name={name} className={styles.input} {...other}>
+      <Field id={name} name={name} className={styles.field} {...other}>
         {options && options.map((option) => <option value={option.value}>{option.label}</option>)}
       </Field>
       <ErrorMessage name={name} />
