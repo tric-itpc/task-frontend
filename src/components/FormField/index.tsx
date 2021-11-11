@@ -1,22 +1,26 @@
 import React from "react";
-import classNames from "classnames";
+import { Field, ErrorMessage, FieldConfig } from "formik";
+// import classNames from "classnames";
 
+import { EMessageCategory } from "../../types";
 import styles from "./styles.module.css";
 
-interface IProps {
+interface IProps extends FieldConfig {
   label: string;
   name: string;
-  helperText?: string;
+  options?: { label: string; value: EMessageCategory }[];
 }
 
-const FormField: React.FC<IProps> = ({ label, name, helperText }) => {
+const FormField: React.FC<IProps> = ({ label, name, options, ...other }) => {
   return (
     <div className={styles.root}>
       <label className={styles.label} htmlFor={name}>
         {label}:
       </label>
-      <input className={classNames({ [styles.input]: true, [styles.danger]: !!helperText })} id={name} />
-      <span className={styles.helperText}>{helperText}</span>
+      <Field id={name} name={name} className={styles.input} {...other}>
+        {options && options.map((option) => <option value={option.value}>{option.label}</option>)}
+      </Field>
+      <ErrorMessage name={name} />
     </div>
   );
 };
