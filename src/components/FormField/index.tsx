@@ -1,7 +1,7 @@
 import React from "react";
-import { Field, ErrorMessage, FieldConfig } from "formik";
-// import classNames from "classnames";
+import { Field, FieldConfig } from "formik";
 
+import ErrorMessage from "../ErrorMessage";
 import { EMessageCategory } from "../../types";
 import styles from "./styles.module.css";
 
@@ -18,9 +18,14 @@ const FormField: React.FC<IProps> = ({ label, name, options, ...other }) => {
         {label}:
       </label>
       <Field id={name} name={name} className={styles.field} {...other}>
-        {options && options.map((option) => <option key={option.value} value={option.value}>{option.label}</option>)}
+        {options &&
+          options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
       </Field>
-      <ErrorMessage className={styles.errorMessage} name={name} component='span' />
+      <ErrorMessage name={name} />
     </div>
   );
 };

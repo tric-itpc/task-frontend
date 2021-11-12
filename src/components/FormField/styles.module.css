@@ -12,9 +12,3 @@
   font-size: 1.1rem;
   border: 1px solid hsl(190, 10%, 12%);
 }
-
-.errorMessage {
-  padding-top: 3px;
-  font-weight: 400;
-  color: brown;
-}
