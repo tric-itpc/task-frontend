@@ -1,0 +1,24 @@
+.fileUpload__input {
+  display: none;
+}
+
+.fileUpload__button {
+  display: inline-block;
+  margin-right: 20px;
+  width: fit-content;
+  padding: 0.6em 1em;
+  font-size: 1.2rem;
+  border: 2px solid hsl(76, 58%, 55%);
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.fileUpload__button:hover {
+  background-color: hsla(76, 58%, 55%, 0.3);
+}
+
+.fileUpload__button:focus,
+.fileUpload__button:active {
+  background-color: hsla(76, 58%, 55%, 0.8);
+  outline: 1px solid hsl(76, 58%, 35%);
+}

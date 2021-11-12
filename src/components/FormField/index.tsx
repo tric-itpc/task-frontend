@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 interface IProps extends FieldConfig {
   label: string;
   name: string;
-  options?: { label: string; value: EMessageCategory }[];
+  options?: { label: string; value?: EMessageCategory }[];
 }
 
 const FormField: React.FC<IProps> = ({ label, name, options, ...other }) => {
@@ -20,7 +20,7 @@ const FormField: React.FC<IProps> = ({ label, name, options, ...other }) => {
       <Field id={name} name={name} className={styles.field} {...other}>
         {options &&
           options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option key={option.label} value={option.value}>
               {option.label}
             </option>
           ))}
