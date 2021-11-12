@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #fead06, #c00def);
+}
+
+.form {
+    position: relative;
+    padding: 70px 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    &__title {
+        color: #111;
+        margin-bottom: 45px;
+        line-height: 1em;
+        font-weight: 500;
+        padding-left: 10px;
+        border-left: 5px solid #e91e63;
+    }
+    &__inputBox {
+        position: relative;
+        width: 300px;
+        height: 46px;
+        margin-bottom: 35px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        input:focus ~ span,
+        input:valid ~ span {
+            transform: translateX(-10px) translateY(-32px);
+            font-size: 16px;
+        }
+
+        input, select {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border: 1px solid #111;
+            background: transparent;
+            padding: 10px;
+            border-radius: 4px;
+            box-sizing: border-box;
+            outline: none;
+            font-size: 16px;
+            color: #111;
+            font-weight: 300;
+        }
+        span {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            padding: 10px;
+            display: inline-block;
+            font-size: 16px;
+            color: #111;
+            font-weight: 300;
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        input[type='submit'] {
+            background: #2196f3;
+            color: #fff;
+            border: none;
+            max-width: 200px;
+            cursor: pointer;
+            font-weight: 500;
+            &:hover {
+                background: #e91e63;
+            }
+        }
+
+        input[type='file'] {
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        p {
+            font-size:12px;
+            display: flex;
+            position: relative;
+            top: 45px;
+            align-items: center;
+            color: red; 
+        }
+    }
+}
+
