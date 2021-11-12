@@ -1,14 +1,14 @@
-.root {
+.field {
   margin: 15px 0;
   display: flex;
   flex-direction: column;
 }
 
-.label {
+.field__label {
   margin-right: 10px;
 }
 
-.field {
+.field__input {
   font-size: 1.1rem;
   border: 1px solid hsl(190, 10%, 12%);
 }

@@ -27,3 +27,9 @@ button:disabled {
   background-color: hsl(76, 58%, 50%);
   outline: 1px solid hsl(76, 58%, 35%);
 }
+
+@media (max-width: 600px) {
+  .button {
+    width: 100%;
+  }
+}

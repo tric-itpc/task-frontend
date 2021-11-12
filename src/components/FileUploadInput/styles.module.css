@@ -22,3 +22,16 @@
   background-color: hsla(76, 58%, 55%, 0.8);
   outline: 1px solid hsl(76, 58%, 35%);
 }
+
+.fileUpload__fileName {
+  white-space: nowrap;
+  line-height: 2em;
+}
+
+@media (max-width: 600px) {
+  .fileUpload__button {
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

@@ -13,11 +13,11 @@ interface IProps extends FieldConfig {
 
 const FormField: React.FC<IProps> = ({ label, name, options, ...other }) => {
   return (
-    <div className={styles.root}>
-      <label className={styles.label} htmlFor={name}>
+    <div className={styles.field}>
+      <label className={styles.field__label} htmlFor={name}>
         {label}:
       </label>
-      <Field id={name} name={name} className={styles.field} {...other}>
+      <Field id={name} name={name} className={styles.field__input} {...other}>
         {options &&
           options.map((option) => (
             <option key={option.label} value={option.value}>

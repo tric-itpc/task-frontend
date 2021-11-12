@@ -4,7 +4,7 @@ import Form from "./Form";
 import styles from "./App.module.css";
 
 const App: React.FC = () => (
-  <div className={styles.root}>
+  <div className={styles.card}>
     <Form />
   </div>
 );

@@ -27,7 +27,7 @@ const FileUploadInput: React.FC<FieldProps> = ({ field, form, ...inputProps }) =
           <div role='button' tabIndex={0} className={styles.fileUpload__button}>
             + добавить картинку
           </div>
-          <span>{field.value?.name}</span>
+          <span className={styles.fileUpload__fileName}>{field.value?.name}</span>
         </div>
       </label>
       <ErrorMessage name={field.name} message={form.errors[field.name]} />
