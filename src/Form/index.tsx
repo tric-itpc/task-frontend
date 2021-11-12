@@ -14,7 +14,7 @@ interface IFormValues {
   email: string;
   category?: EMessageCategory;
   message: string;
-  image?: File;
+  image?: File | Blob | string;
 }
 
 const categories = [
@@ -66,9 +66,22 @@ const initialValues: IFormValues = {
 };
 
 const MyForm: React.FC = () => {
-  const onSubmit = (values: IFormValues) => {
-    console.dir(values);
-    alert(JSON.stringify(values, null, 2));
+  const getFileURL = (blob: Blob): Promise<string> => {
+    return new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(typeof reader.result === "string" ? reader.result : "");
+      reader.readAsDataURL(blob as Blob);
+    });
+  };
+
+  const onSubmit = async (values: IFormValues) => {
+    const data = { ...values };
+
+    if (data.image) {
+      data.image = await getFileURL(data.image as Blob);
+    }
+    console.dir(data);
+    alert(JSON.stringify(data, null, 2));
   };
 
   return (
