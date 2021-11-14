@@ -1,0 +1,15 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown__select {
+  height: 30px;
+  width: 100%;
+  font-size: 16px;
+  margin: 10px 0px 30px 0px;
+}
+
+.dropdown__error-msg {
+  position: absolute;
+  top: 60%;
+}
