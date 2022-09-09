@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useValidate } from './useValidation';
 
 export function useForm(initialValue, validations) {
@@ -15,8 +15,8 @@ export function useForm(initialValue, validations) {
 
     setValue(inputValue);
     setInputName(nameInput);
-    if (inputName === 'file') {
-      setSizeFile(input?.files[0]?.size / 1024 / 1024);
+    if (nameInput === 'file') {
+      setSizeFile(input?.files[0].size / 1024 / 1024);
     }
   };
 
