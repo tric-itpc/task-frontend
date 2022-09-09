@@ -96,7 +96,7 @@ function App() {
           <label
             className='form__label form__label-extend'
             htmlFor='standard-select'>
-            Тема вопроса:
+            Категория обращения:
           </label>
           <select
             className='select__sel'
