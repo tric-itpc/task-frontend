@@ -1,77 +1,38 @@
-# Вакансия :: Frontend-разработчик
+# Test task for the ITPC
 
-Разработка бизнес-системы с использованием веб-технологий. Автоматизация сервисов с большим количеством пользователей.
+This is the repository with code of my **React form** app that I made for ITPC test task (task bellow in a Russian language)
+It was made with react. [Live demo]()
 
-## От вас
+## Technologies I've used
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![Webpack](https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 
-### Обязательно
+## Available Scripts
 
-- Знание синтаксиса языков JavaScript, TypeScript
-- Базовые знания принципов работы Web
-- Желание работать в команде и развиваться
+In the project directory, you can run:
 
-### Приветствуется
+### `npm install`
 
-- Навыки работы с React, Redux, MobX
-- Опыт работы с WebSocket
-- Опыт работы с ОС семейства GNU Linux
-- Работа с системами управления исходным кодом Git
-- Знания базовых принципов разработки (тестирование, рефакторинг, Code Review)
+Runs the setup for further development.
 
-### Будет круто, но не обязательно
+### `npm start`
 
-- Знание английского языка на уровне чтения технической документации;
-- Участие в разработке Open Source проектов;
-- Наличие профиля на GitHub, Stack Overflow;
-- Наличие проектов которые можете продемонстрировать.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## У нас
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-- Полный рабочий день, гибкий обед по желанию сотрудника, гибкое время начала рабочего дня
-- Полностью «белая» заработная плата с возможностью увеличения в процессе работы (зависит от отдачи сотрудника)
-- Добровольное медицинское страхование
-- Дружелюбная команда с юмором, готовая поддержать
-- Интересный проект и необычные задачи. Нет, если думаете, что рутины нет, она есть, но нацелены мы именно на продуктив
-- Возможность одновременно участвовать в разных проектах и развивать другие компетенции
-- Возможность попробовать современные тренды и практики в разработке ПО
-- По желанию: один день в неделю - удаленная работа
-- Никаких опенспейсов, а комфортное пространство в центре Тюмени
-- Готовы безгранично делиться опытом при условии, что вы готовы принимать
+### `npm run build`
 
-&nbsp;  
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Если у вас есть опыт работы с 1С, то эта вакансия не для вас. Даже не пытайтесь.  
-Если вакансия вас заинтересовала, но есть какие-то недопонимания и вопросы, приходите, обсудим, договоримся.  
-Большим плюсом будет выполнение тестового задания.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Тестовое задание
-
-Решение принимается в виде PR к текущему проекту.
-
-Создайте форму обратной связи.
-В форме пользователь может:
-
-- ввести имя
-- ввести фамилию
-- ввести email
-- выбрать категорию сообщения
-- написать сообщение
-- добавить картинку
-
-Дополнительно необходима валидация по следующим правилам:
-
-- email - обязательное поле
-- имя, фамилия - должно быть заполнено одно из двух
-- категория - выпадающий список. Поле обязательное, но значение по умолчанию должно быть пустым. Пустое значение не принимается
-- сообщение - обязательное, минимум 10 символов
-- картинка - формат jpg, png. Размер не более 2Мб
-
-Результат заполнения формы должен быть в формате JSON для отправки в API
-
-### Условия
-
-- использовать React js
-- писать на TypeScript (не обязательно, но будет огромным плюсом)
-- форма должна быть адаптивной
-- придерживаться методологии БЭМ
-- все должно происходить в браузере без использования стороннего сервера
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
