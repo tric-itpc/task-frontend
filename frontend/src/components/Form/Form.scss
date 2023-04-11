@@ -1,0 +1,77 @@
+@use "../../assets/mixins" as *;
+@use "../../assets/variables" as *;
+
+.form {
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  padding: 50px 25px;
+  &__container {
+    margin-top: 50px;
+
+    @include flex("center", "center", "column");
+    gap: 20px;
+
+    @media screen and (min-width: 424px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        ". ."
+        ". ."
+        "message message"
+        "file file";
+    }
+  }
+  &__label {
+    color: $color_header;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    @include flex("center", "center", "column");
+  }
+  &__input {
+    margin-top: 8px;
+    padding: 13px 10px;
+    background: #fff;
+    border: 1px solid #888888;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.18);
+    border-radius: 9px;
+  }
+  &__select {
+    cursor: pointer;
+  }
+  &__submit {
+    margin-top: 25px;
+    width: 100%;
+    background: #0096ff;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid transparent;
+    padding: 11px;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    @include hover(#fff, #007bd1, 600ms);
+  }
+}
+
+.error {
+  color: #ff0017;
+  margin-top: 8px;
+  font-weight: 400;
+}
+.file {
+  grid-area: file;
+}
+.message {
+  grid-area: message;
+  textarea {
+    width: 100%;
+    resize: vertical;
+    min-height: 150px;
+  }
+}
