@@ -18,11 +18,12 @@
   }
 }
 
-@mixin btn-color($color, $transitionDuration) {
+@mixin hover($color, $BgColor, $transitionDuration) {
   transition: $transitionDuration ease;
   &:hover,
   &:active {
     color: $color;
+    background-color: $BgColor;
   }
 }
 
