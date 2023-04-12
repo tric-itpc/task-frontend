@@ -4,6 +4,31 @@ import { isEmailValidate, isImageValidate } from '../../utils';
 import { Feedback } from '../../types/Feedback.interface';
 
 import './Form.scss';
+import { Input } from '../Input/Input';
+import { InputProps } from '../Input/Input.props';
+import { Select } from '../Select/Select';
+
+const formInputs: Omit<InputProps, 'register' | 'errors'>[] = [
+  {
+    name: 'firstName',
+    title: 'First Name',
+    placeholder: 'Your first name',
+  },
+  {
+    name: 'lastName',
+    title: 'Last Name',
+    placeholder: 'Your last name',
+  },
+  {
+    name: 'email',
+    title: 'Email',
+    placeholder: 'Your last name',
+    optionsValidate: {
+      validate: (value: string) => isEmailValidate(value),
+    },
+    errorMessage: 'Please enter a valid email',
+  },
+];
 
 export const Form = () => {
   const {
@@ -27,8 +52,8 @@ export const Form = () => {
       return;
     }
 
-    if ((isValid && firstName) || lastName) {
-      console.log(JSON.stringify({...data, image: file.name}));
+    if (isValid && (firstName || lastName)) {
+      console.log(JSON.stringify({ ...data, image: file.name }));
       reset();
       alert('Thank you for your feedback!');
     }
@@ -38,64 +63,29 @@ export const Form = () => {
     <form action='#' onSubmit={handleSubmit(onSubmit)} className='form'>
       <h1>Feedback 😍</h1>
       <div className='form__container'>
-        <label className='form__label'>
-          First Name
-          <input
-            className='form__input'
-            placeholder='Your first name'
-            {...register('firstName')}
+        {formInputs.map((input) => (
+          <Input
+            key={input.name}
+            register={register}
+            errors={errors}
+            errorMessage={input.errorMessage || ''}
+            optionsValidate={input.optionsValidate || {}}
+            {...input}
           />
-          {errors?.lastName && (
-            <div className='error'>{errors?.firstName?.message}</div>
-          )}
-        </label>
-        <label className='form__label'>
-          Last Name
-          <input
-            className='form__input'
-            placeholder='Your last name'
-            {...register('lastName')}
-          />
-          {errors?.lastName && (
-            <div className='error'>{errors?.lastName?.message}</div>
-          )}
-        </label>
-        <label className='form__label'>
-          Email
-          <input
-            placeholder='Your working email'
-            type='email'
-            className='form__input'
-            {...register('email', {
-              required: 'This field is required',
-              validate: (value) => isEmailValidate(value),
-            })}
-          />
-          {errors?.email && (
-            <div className='error'>
-              {errors?.email?.message || 'Please enter a valid email'}
-            </div>
-          )}
-        </label>
-        <label className='form__label'>
-          Category
-          <select
-            className='form__input select'
-            defaultValue={''}
-            {...register('category', {
-              required: 'This field is required',
-            })}
-          >
-            <option value='' disabled>
-              Select a category
-            </option>
-            <option value='Category2'>Category 0</option>
-            <option value='Category3'>Category 1</option>
-          </select>
-          {errors?.category && (
-            <div className='error'>{errors?.category?.message}</div>
-          )}
-        </label>
+        ))}
+        <Select
+          key={'category'}
+          register={register}
+          errors={errors}
+          name={'category'}
+          title={'Category'}
+          options={[
+            { value: '', label: 'Select a category', disabled: true },
+            { value: 'Category0', label: 'Category 0' },
+            { value: 'Category1', label: 'Category 1' },
+            { value: 'Category2', label: 'Category 2' },
+          ]}
+        />
         <label className='form__label message'>
           <textarea
             placeholder='Add your comments...'
