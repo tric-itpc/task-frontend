@@ -1,0 +1,67 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 15px;
+  width: 100%;
+  max-width: 400px;
+  min-width: 320px;
+
+
+}
+
+.form__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 100%;
+  position: relative;
+}
+
+.form__input,
+.form__file {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: azure;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  width: 100%;
+}
+
+.form__file {
+  color: #000;
+}
+
+.form__select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+.form__select::-ms-expand {
+	display: none;
+}
+
+.form__text {
+  resize: none;
+  height: 100px;
+}
+
+.form__row-file {
+  position: relative;
+}
+
+.form__file {
+  cursor: pointer;
+}
+
+.form__file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0.1;
+}

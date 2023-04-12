@@ -1,0 +1,16 @@
+.tooltip {
+  position: absolute;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #fff685;
+  color: #000;
+  font-weight: 500;
+  transition: .3;
+
+  width: 100%;
+  top: -10px;
+}
+
+.form__row-file>.tooltip {
+  top: -40px;
+}
