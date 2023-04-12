@@ -4,7 +4,7 @@ export interface Feedback {
   email: string;
   category: string;
   message: string;
-  image: File;
+  image: FileList;
 }
 
 /* 
