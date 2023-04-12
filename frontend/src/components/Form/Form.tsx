@@ -4,22 +4,33 @@ import { isEmailValidate, isImageValidate } from '../../utils';
 import { Feedback } from '../../types/Feedback.interface';
 
 import './Form.scss';
+
 export const Form = () => {
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
     reset,
+    setError,
   } = useForm<Feedback>({
     mode: 'onSubmit',
   });
 
   const onSubmit: SubmitHandler<Feedback> = (data) => {
-    if (isValid) {
-      console.log();
+    const { image, firstName, lastName } = data;
+    const file = image[0];
+
+    if (!isImageValidate(file)) {
+      setError('image', {
+        message: 'Incorrect format or size over 2MB',
+      });
+      return;
+    }
+
+    if ((isValid && firstName) || lastName) {
+      console.log(JSON.stringify({...data, image: file.name}));
       reset();
       alert('Thank you for your feedback!');
-      console.log(JSON.stringify(data));
     }
   };
 
@@ -32,11 +43,9 @@ export const Form = () => {
           <input
             className='form__input'
             placeholder='Your first name'
-            {...register('firstName', {
-              required: 'This field is required',
-            })}
+            {...register('firstName')}
           />
-          {errors?.firstName && (
+          {errors?.lastName && (
             <div className='error'>{errors?.firstName?.message}</div>
           )}
         </label>
@@ -45,9 +54,7 @@ export const Form = () => {
           <input
             className='form__input'
             placeholder='Your last name'
-            {...register('lastName', {
-              required: 'This field is required',
-            })}
+            {...register('lastName')}
           />
           {errors?.lastName && (
             <div className='error'>{errors?.lastName?.message}</div>
@@ -73,7 +80,7 @@ export const Form = () => {
         <label className='form__label'>
           Category
           <select
-            className='form__input form__select'
+            className='form__input select'
             defaultValue={''}
             {...register('category', {
               required: 'This field is required',
@@ -82,8 +89,8 @@ export const Form = () => {
             <option value='' disabled>
               Select a category
             </option>
-            <option value='Category2'>Category 2</option>
-            <option value='Category3'>Category 3</option>
+            <option value='Category2'>Category 0</option>
+            <option value='Category3'>Category 1</option>
           </select>
           {errors?.category && (
             <div className='error'>{errors?.category?.message}</div>
@@ -112,7 +119,6 @@ export const Form = () => {
             accept='.jpg, .jpeg, .png'
             {...register('image', {
               required: true,
-              validate: (image) => isImageValidate(image),
             })}
           />
           {errors?.image && (

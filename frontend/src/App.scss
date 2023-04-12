@@ -1,5 +1,7 @@
 @use './assets/mixins' as *;
 
 .App {
-  @include flex()
+  @include flex();
+  height: 100%;
+  min-height: 100vh;
 }
