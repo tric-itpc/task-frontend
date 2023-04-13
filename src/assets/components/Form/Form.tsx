@@ -33,6 +33,8 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
             <TextareaAutosize
                 className="form__message"
                 placeholder="Введите текст сообщения"
+                minRows={2}
+                maxRows={8}
             />
             <div className="form__image-group">
                 <label className="form__image-label" htmlFor="add-image">

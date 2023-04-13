@@ -26,9 +26,13 @@ $InputFocus: #4c43a1
         background-clip: padding-box
         border: 1px solid $InputBorder
         border-radius: 0.25rem
+        @media ( max-width: 315px )
+            font: 400 normal .8rem/1.5 $Roboto
         &::placeholder
             color: $PlaceholderColor
             font: 400 normal 1rem/1.5 $Roboto
+            @media ( max-width: 315px )
+                font: 400 normal .8rem/1.5 $Roboto
         &:focus
             outline: none
             border-color: $InputFocus
@@ -42,11 +46,15 @@ $InputFocus: #4c43a1
     &__select-label
         color: $BlueText
         font: 400 normal 1rem/1.5 $Roboto
+        @media ( max-width: 315px )
+            font: 400 normal .8rem/1.5 $Roboto
     &__select
         color: $GrayText
         font: 400 normal 1rem/1.5 $Roboto
         border: 1px solid $InputBorder
         border-radius: 0.25rem
+        @media ( max-width: 315px )
+            font: 400 normal .8rem/1.5 $Roboto
         &:focus
             outline: none
     &__message
@@ -62,6 +70,8 @@ $InputFocus: #4c43a1
         border-radius: 0.25rem
         outline: none
         resize: none
+        @media ( max-width: 315px )
+            font: 400 normal .8rem/1.5 $Roboto
         &:focus
             outline: none
             border-color: $InputFocus
@@ -98,6 +108,8 @@ $InputFocus: #4c43a1
         background: $FormBorder
         border: none
         border-radius: 0.25rem
+        @media ( max-width: 315px )
+            font: 400 normal .8rem/1.5 $Roboto
         &:hover
             cursor: pointer
-            background: #312a70
+            background: #1c1841
