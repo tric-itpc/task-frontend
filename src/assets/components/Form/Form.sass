@@ -26,6 +26,8 @@ $InputFocus: #4c43a1
         background-clip: padding-box
         border: 1px solid $InputBorder
         border-radius: 0.25rem
+        &_red
+            border: 1px solid red
         @media ( max-width: 315px )
             font: 400 normal .8rem/1.5 $Roboto
         &::placeholder
@@ -53,6 +55,8 @@ $InputFocus: #4c43a1
         font: 400 normal 1rem/1.5 $Roboto
         border: 1px solid $InputBorder
         border-radius: 0.25rem
+        &_red
+            border: 1px solid red
         @media ( max-width: 315px )
             font: 400 normal .8rem/1.5 $Roboto
         &:focus
@@ -70,6 +74,8 @@ $InputFocus: #4c43a1
         border-radius: 0.25rem
         outline: none
         resize: none
+        &_red
+            border: 1px solid red
         @media ( max-width: 315px )
             font: 400 normal .8rem/1.5 $Roboto
         &:focus
@@ -78,6 +84,8 @@ $InputFocus: #4c43a1
             box-shadow: 0 0 0 0.2rem rgba(28,24,65,.368627451)
     &__image-group
         display: flex
+        align-items: center
+        justify-content: space-between
         padding-bottom: 10px
         margin-bottom: 10px
         border-bottom: 1px solid $InputBorder
@@ -92,12 +100,20 @@ $InputFocus: #4c43a1
         background: #eee
         color: $GrayText
         font: 400 normal .8rem/1.5 $Roboto
+        &_red
+            background: red,
+            color: #fff
+            border: none
         &:hover
             cursor: pointer
             background: #e2e2e2
             transition: background .2s
     &__image-input
         display: none
+    &__img-attached
+        padding-left: 10px
+        color: $GrayText
+        font: 400 normal .7rem/1.5 $Roboto
     &__btn-submit
         width: 100%
         height: calc(1.5em + 0.75rem + 2px)
@@ -113,3 +129,7 @@ $InputFocus: #4c43a1
         &:hover
             cursor: pointer
             background: #1c1841
+    &__error
+        display: flex
+        color: red,
+        font: 400 normal .8rem/1.5 $Roboto
