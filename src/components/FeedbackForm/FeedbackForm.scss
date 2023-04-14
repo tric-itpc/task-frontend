@@ -1,0 +1,86 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 436px;
+    border: 1px solid white;
+    gap: 28px;
+    padding: 15px;
+    height: 100%;
+    background: linear-gradient(
+        102.72deg,
+        rgba(235, 235, 235, 0.87) -9.31%,
+        rgba(255, 255, 255, 0.1218) 116.33%,
+        rgba(255, 255, 255, 0.87) 116.33%
+    );
+    border-radius: 10px;
+    backdrop-filter: blur(12.5px);
+    &__title {
+        text-align: center;
+        color: #353535;
+    }
+    &__btn-submit {
+        color: #353535;
+        border: none;
+        background: #fff;
+        width: 116px;
+        padding: 10px;
+        border-radius: 10px;
+        &:hover {
+            background-color: #bdbbba;
+            color: white;
+        }
+        &:active {
+            outline: 1px solid #9b9896;
+        }
+    }
+    &__wrapper {
+        color: #353535;
+        &_label {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &_input-text {
+            max-width: 400px;
+            padding: 5px;
+            border: none;
+            margin: 2px;
+            &:focus {
+                outline: 1px solid #9b9896;
+            }
+        }
+        &_text-area {
+            max-width: 400px;
+            resize: none;
+            border: none;
+            margin: 2px;
+            height: 180px;
+
+            &:focus {
+                outline: 1px solid #9b9896;
+            }
+        }
+        &_select {
+            max-width: 400px;
+            margin: 2px;
+            height: 50px;
+            color: #353535;
+            padding: 0 20px;
+            font-size: 16px;
+            text-align: center;
+            appearance: none;
+            background: #fff;
+            border: 1px solid #e2e2e2;
+            border-radius: 10px;
+            cursor: pointer;
+            &:focus {
+                outline: 1px solid #9b9896;
+            }
+        }
+        &_error {
+            color: #e53e3e;
+            position: absolute;
+            margin-top: 2px;
+        }
+    }
+}
