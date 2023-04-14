@@ -124,11 +124,16 @@ $InputFocus: #4c43a1
         background: $FormBorder
         border: none
         border-radius: 0.25rem
-        @media ( max-width: 315px )
-            font: 400 normal .8rem/1.5 $Roboto
         &:hover
             cursor: pointer
             background: #1c1841
+        &_disabled
+            background: #ccc
+            &:hover
+                cursor: no-drop
+                background: #ccc
+        @media ( max-width: 315px )
+            font: 400 normal .8rem/1.5 $Roboto
     &__error
         display: flex
         color: red,

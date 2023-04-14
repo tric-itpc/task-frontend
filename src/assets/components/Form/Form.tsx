@@ -52,6 +52,7 @@ const enum classes {
     IMAGE_ERROR = "form__image-label form__image-label_red",
     IMAGE_INPUT = "form__image-input",
     SUBMIT = "form__btn-submit",
+    SUBMIT_DIS = "form__btn-submit form__btn-submit_disabled",
     ATTACHED = "form__img-attached",
 }
 
@@ -67,12 +68,17 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
     const isValid = useAppSelector(getValidation);
 
     useEffect(() => {
-        if (firstName.error || email.error || category.error || message.error) {
-            dispatch(setIsValid(false));
-        } else {
+        if (
+            firstName.value &&
+            email.value &&
+            category.value !== "empty" &&
+            message.value
+        ) {
             dispatch(setIsValid(true));
+        } else {
+            dispatch(setIsValid(false));
         }
-    }, [firstName.error, email.error, category.error, message.error]);
+    }, [firstName.value, email.value, category.value, message.value]);
 
     const blurHandler = (
         e: React.ChangeEvent<
@@ -99,6 +105,20 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
                 dispatch(setImageDirty());
                 break;
         }
+    };
+
+    const submitHandler = (e: React.ChangeEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log(e.target);
+        const data = {
+            firstName: firstName.value,
+            secondName: secondName.value,
+            email: email.value,
+            category: category.value,
+            message: message.value,
+            image: image.value,
+        };
+        alert(JSON.stringify(data, null, 2));
     };
 
     const firstNameHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -183,14 +203,16 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
     };
 
     return (
-        <form className={classes.FORM}>
+        <form className={classes.FORM} onSubmit={submitHandler}>
             {firstName.dirty && firstName.error && (
                 <ErrorMessage text={firstName.error} />
             )}
             <input
-                className={classes.INPUT}
+                className={
+                    !firstName.error ? classes.INPUT : classes.INPUT_ERROR
+                }
                 type="text"
-                placeholder="Ваше имя"
+                placeholder="Ваше имя*"
                 name="first-name"
                 value={firstName.value}
                 onChange={firstNameHandler}
@@ -210,9 +232,9 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
             />
             {email.dirty && email.error && <ErrorMessage text={email.error} />}
             <input
-                className={classes.INPUT}
+                className={!email.error ? classes.INPUT : classes.INPUT_ERROR}
                 type="email"
-                placeholder="Ваш email"
+                placeholder="Ваш email*"
                 name="email"
                 value={email.value}
                 onChange={emailHandler}
@@ -223,17 +245,23 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
             )}
             <div className={classes.SELECT_GROUP}>
                 <label className={classes.SELECT_LABEL} htmlFor="category">
-                    Вид обращения:
+                    Тип обращения*:
                 </label>
                 <select
-                    className={classes.SELECT}
+                    className={
+                        !category.error ? classes.SELECT : classes.SELECT_ERROR
+                    }
                     name="category"
                     id="category"
                     value={category.value}
                     onChange={categoryHandler}
                     onBlur={blurHandler}
                 >
-                    <option className={classes.OPTION} value="empty"></option>
+                    <option
+                        className={classes.OPTION}
+                        value="empty"
+                        placeholder="*"
+                    ></option>
                     <option className={classes.OPTION} value="application">
                         Заявка
                     </option>
@@ -247,10 +275,11 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
             )}
             <TextareaAutosize
                 className={classes.MESSAGE}
-                placeholder="Введите текст сообщения"
+                placeholder="Введите текст сообщения*"
                 name="message"
                 minRows={2}
                 maxRows={8}
+                disabled={category.value === "empty"}
                 value={message.value}
                 onChange={messageHandler}
                 onBlur={blurHandler}
@@ -279,7 +308,11 @@ const Form: FC = (): ReactElement<HTMLFormElement> => {
                     </div>
                 )}
             </div>
-            <button className={classes.SUBMIT} type="submit" disabled={isValid}>
+            <button
+                className={isValid ? classes.SUBMIT : classes.SUBMIT_DIS}
+                type="submit"
+                disabled={!isValid}
+            >
                 Отправить обращение
             </button>
         </form>
