@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #3d3d4f;
+  -webkit-box-shadow: 0 0 0px 1000px #10101e inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+body {
+  height: 100%;
+  background-color: #06070b;
+  background: 
+    radial-gradient(circle, transparent 20%, #06070b 20%, #06070b 80%, transparent 80%, transparent),
+    radial-gradient(circle, transparent 20%, #06070b 20%, #06070b 80%, transparent 80%, transparent) 25px 25px,
+    linear-gradient(#10101e 2px, transparent 2px) 0 -1px,
+    linear-gradient(90deg, #10101e 2px, #06070b 2px) -1px 0;
+  background-size: 50px 50px, 50px 50px, 25px 25px, 25px 25px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: hsl(60, 45%, 68%);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin: auto;
+  margin-top: 5rem;
+  padding: .5rem;
+  background-color: #18182a;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 600px;
+}
+
+form {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.form--item {
+  display: grid;
+}
+
+.item-mt {
+  margin-top: .5rem;
+}
+.form--item label {
+  padding-left: .5rem;
+  margin-bottom: .2rem;
+}
+
+.form--item-input {
+  background-color: #10101e;
+  border: none;
+  padding: .5rem;
+  border-radius: .5rem;
+
+  color: #3d3d4f;
+  font-size: 1rem;
+}
+
+.input-file-btn {
+  background-color: hsl(60, 45%, 68%);
+  color: #10101e;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: .5rem;
+  border: none;
+  border-radius: .5rem;
+}
+
+
+.error-placeholder::placeholder {
+  color: 	rgb(223, 71, 89);
+}
+
+.error-text {
+  color: 	rgb(223, 71, 89);
+}
+
+
+.form--button {
+  background-color: hsl(60, 45%, 68%);
+  color: #10101e;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: .5rem;
+  border: none;
+  border-radius: .5rem;
+  margin-bottom: .7rem;
+}
+
+@media(max-width: 512px) {
+  .error-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media(max-width: 350px) {
+  main {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0);
+    margin: 0;
+    justify-content: center;
+  }
+}
