@@ -1,5 +1,9 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
+const nameRegExp = /^[а-яА-ЯёЁa-zA-Z]+$/;
+const emailRegExp =
+    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 interface InputType {
     value: string;
     dirty: boolean;
@@ -59,57 +63,86 @@ const initialState: IForms = {
 };
 
 export const FormSlice = createSlice({
-    name: "FormSlice",
+    name: "form",
     initialState,
     reducers: {
         setFirstNameValue(state, { payload }: PayloadAction<string>) {
             state.firstNameField.value = payload;
+            if (!payload) {
+                state.firstNameField.error = "Поле должно быть заполнено!";
+                return;
+            }
+            if (!payload.toLowerCase().match(nameRegExp)) {
+                state.firstNameField.error = "Имя не должно содержать чисел!";
+                return;
+            }
+            state.firstNameField.error = "";
         },
         setFirstNameDirty(state) {
             state.firstNameField.dirty = true;
         },
-        setFirstNameErrorMessage(state, { payload }: PayloadAction<string>) {
-            state.firstNameField.error = payload;
-        },
 
         setSecondNameValue(state, { payload }: PayloadAction<string>) {
             state.secondNameField.value = payload;
+
+            if (!payload) {
+                state.secondNameField.error = "";
+                return;
+            }
+            if (!payload.toLowerCase().match(nameRegExp)) {
+                state.secondNameField.error =
+                    "Фамилия не должна содержать чисел";
+                return;
+            }
+            state.secondNameField.error = "";
         },
         setSecondNameDirty(state) {
             state.secondNameField.dirty = true;
         },
-        setSecondNameErrorMessage(state, { payload }: PayloadAction<string>) {
-            state.secondNameField.error = payload;
-        },
 
         setEmailValue(state, { payload }: PayloadAction<string>) {
             state.emailField.value = payload;
+
+            if (!payload) {
+                state.emailField.error = "Поле должно быть заполнено!";
+                return;
+            }
+            if (!payload.toLowerCase().match(emailRegExp)) {
+                state.emailField.error = "Email введён не корректно!";
+                return;
+            }
+            state.emailField.error = "";
         },
         setEmailDirty(state) {
             state.emailField.dirty = true;
         },
-        setEmailErrorMessage(state, { payload }: PayloadAction<string>) {
-            state.emailField.error = payload;
-        },
 
         setCategoryValue(state, { payload }: PayloadAction<string>) {
             state.category.value = payload;
+            if (payload === "empty") {
+                state.category.error = "Выберите тип обращения!";
+                return;
+            }
+            state.category.error = "";
         },
         setCategoryDirty(state) {
             state.category.dirty = true;
         },
-        setCategoryErrorMessage(state, { payload }: PayloadAction<string>) {
-            state.category.error = payload;
-        },
 
         setMessageValue(state, { payload }: PayloadAction<string>) {
             state.messageField.value = payload;
+            if (!payload) {
+                state.messageField.error = "Поле должно быть заполнено!";
+                return;
+            }
+            if (payload.length < 10) {
+                state.messageField.error = "Сообщение не менее 10 символов!";
+                return;
+            }
+            state.messageField.error = "";
         },
         setMessageDirty(state) {
             state.messageField.dirty = true;
-        },
-        setMessageErrorMessage(state, { payload }: PayloadAction<string>) {
-            state.messageField.error = payload;
         },
 
         setImageValue(state, { payload }: PayloadAction<string>) {
@@ -128,6 +161,16 @@ export const FormSlice = createSlice({
         setIsValid(state, { payload }: PayloadAction<boolean>) {
             state.isValid = payload;
         },
+
+        setClearForm(state) {
+            state.firstNameField.value = "";
+            state.secondNameField.value = "";
+            state.emailField.value = "";
+            state.category.value = "empty";
+            state.messageField.value = "";
+            state.addImage.value = "";
+            state.addImage.name = "";
+        },
     },
 });
 
@@ -145,12 +188,8 @@ export const {
     setCategoryValue,
     setImageDirty,
     setImageValue,
-    setEmailErrorMessage,
     setImageErrorMessage,
-    setMessageErrorMessage,
-    setSecondNameErrorMessage,
-    setFirstNameErrorMessage,
-    setCategoryErrorMessage,
     setImageName,
     setIsValid,
+    setClearForm,
 } = FormSlice.actions;
