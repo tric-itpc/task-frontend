@@ -1,0 +1,17 @@
+.logo {
+  display: block;
+  /* margin-right: 168px; */
+}
+
+.logo__image {
+  border-radius: 50%;
+  width: 432px;
+  display: block;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .logo {
+    display: none;
+  }
+}
